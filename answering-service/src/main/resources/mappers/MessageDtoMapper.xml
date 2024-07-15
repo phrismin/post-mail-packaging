@@ -1,0 +1,29 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE mapper PUBLIC '-//mybatis.org//DTD Mapper 3.0//EN'
+        'http://mybatis.org/dtd/mybatis-3-mapper.dtd'>
+<mapper namespace="com.example.answeringservice.repository.MessageRepository">
+
+    <select id="findAnswerByUniqueMessage" parameterType="int" resultMap="MessageDtoMap">
+        select *
+        from messages
+        where unique_message = #{uniqueMessage};
+    </select>
+
+    <resultMap id="MessageDtoMap" type="com.example.answeringservice.domain.MessageDetailDto">
+
+        <result property="errors" column="errors"/>
+        <result property="messageText" column="message_text"/>
+        <result property="date" column="date"/>
+        <result property="status" column="status"/>
+        <result property="dateStatus" column="date_status"/>
+    </resultMap>
+
+    <resultMap id="MessageDtoMap" type="com.example.answeringservice.domain.MessageDto">
+        <result property="uniqueMessage" column="unique_message"/>
+        <result property="groupUsers" column="group_users"/>
+        <result property="templateId" column="template_id"/>
+        <result property="file" column="file"/>
+        <result property="typeFile" column="type_file"/>
+        <result property="data" column="data" javaType="java.util.Map" jdbcType="text"/>
+    </resultMap>
+</mapper>
