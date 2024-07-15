@@ -24,6 +24,6 @@
         <result property="templateId" column="template_id"/>
         <result property="file" column="file"/>
         <result property="typeFile" column="type_file"/>
-        <result property="data" column="data" javaType="java.util.Map" jdbcType="text"/>
+        <result property="data" column="data"/>
     </resultMap>
 </mapper>
