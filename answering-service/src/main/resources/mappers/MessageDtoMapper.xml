@@ -3,11 +3,6 @@
         'http://mybatis.org/dtd/mybatis-3-mapper.dtd'>
 <mapper namespace="com.example.answeringservice.repository.MessageRepository">
 
-    <!--    <select id="findAnswerByUniqueMessage" parameterType="int" resultMap="MessageAndMessageDetailDto>-->
-    <!--        select *-->
-    <!--        from messages-->
-    <!--        where unique_message = #{uniqueMessage};-->
-    <!--    </select>-->
     <select id="findAnswerByUniqueMessage" parameterType="string" resultMap="MessageAndMessageDetailDtoMap">
         select m.group_users,
                m.template_id,
