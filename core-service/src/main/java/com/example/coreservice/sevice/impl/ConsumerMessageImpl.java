@@ -1,6 +1,6 @@
 package com.example.coreservice.sevice.impl;
 
-import com.example.answeringservice.domain.MessageDto;
+import com.example.coreservice.domain.MessageDto;
 import com.example.coreservice.sevice.ConsumerMessageService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.amqp.rabbit.annotation.RabbitListener;
