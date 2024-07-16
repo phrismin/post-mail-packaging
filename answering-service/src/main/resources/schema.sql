@@ -1,4 +1,5 @@
 drop table if exists messages;
+drop table if exists message_details;
 drop table if exists templates;
 drop table if exists users;
 drop table if exists group_users;
@@ -33,22 +34,28 @@ create table if not exists users
     group_users_id int references group_users (id)
 );
 
+create table if not exists message_details
+(
+    id           serial primary key,
+    errors       text,
+    message_text text,
+    date         timestamp,
+    status       text,
+    date_status  text
+);
+
 create table if not exists messages
 (
-    id             serial primary key,
-    group_users    int references group_users (id),
-    template_id    int references templates (id),
-    subject_id     int references subjects_mail (id),
-    unique_message text unique not null,
-    type_file      text,
-    data           jsonb,
-    file           bytea,
-    message        text,
-    errors         text,
-    message_text   text,
-    date           timestamp,
-    status         text,
-    date_status    text
+    id                serial primary key,
+    group_users       int references group_users (id),
+    template_id       int references templates (id),
+    subject_id        int references subjects_mail (id),
+    message_detail_id int references message_details (id),
+    subject_email_id  int references subjects_mail (id),
+    unique_message    text unique not null,
+    type_file         text,
+    data              jsonb,
+    file              bytea
 );
 
 insert into group_users (name)
