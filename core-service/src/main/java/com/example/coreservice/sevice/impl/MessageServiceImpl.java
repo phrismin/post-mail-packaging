@@ -1,8 +1,8 @@
-package com.example.answeringservice.sevice.impl;
+package com.example.coreservice.sevice.impl;
 
 import com.example.answeringservice.domain.MessageAndMessageDetailDto;
 import com.example.answeringservice.repository.MessageRepository;
-import com.example.answeringservice.sevice.MessageService;
+import com.example.coreservice.sevice.MessageService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;

@@ -1,4 +1,4 @@
-package com.example.answeringservice.config;
+package com.example.coreservice.config;
 
 import com.zaxxer.hikari.HikariConfig;
 import com.zaxxer.hikari.HikariDataSource;

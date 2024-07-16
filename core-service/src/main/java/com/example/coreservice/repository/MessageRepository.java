@@ -1,7 +1,7 @@
-package com.example.answeringservice.repository;
+package com.example.coreservice.repository;
 
 import com.example.answeringservice.domain.MessageAndMessageDetailDto;
-import org.apache.ibatis.annotations.*;
+import org.apache.ibatis.annotations.Mapper;
 
 @Mapper
 public interface MessageRepository {
