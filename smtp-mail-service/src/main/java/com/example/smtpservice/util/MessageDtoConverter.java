@@ -1,4 +1,4 @@
-package com.example.answeringservice;
+package com.example.smtpservice.util;
 
 import com.example.answeringservice.domain.MessageDto;
 import com.fasterxml.jackson.databind.ObjectMapper;

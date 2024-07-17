@@ -1,6 +1,6 @@
-package com.example.answeringservice.config;
+package com.example.smtpservice.config;
 
-import com.example.answeringservice.util.MessageDtoConverter;
+import com.example.smtpservice.util.MessageDtoConverter;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.amqp.rabbit.annotation.EnableRabbit;
 import org.springframework.amqp.rabbit.connection.ConnectionFactory;

@@ -35,6 +35,6 @@
         <result property="templateId" column="template_id"/>
         <result property="file" column="file"/>
         <result property="typeFile" column="type_file"/>
-        <result property="data" column="data" javaType="java.util.Map" jdbcType="VARCHAR" typeHandler="com.example.answeringservice.MapTypeHandler"/>
+        <result property="data" column="data" javaType="java.util.Map" jdbcType="VARCHAR" typeHandler="com.example.answeringservice.util.MapTypeHandler"/>
     </resultMap>
 </mapper>

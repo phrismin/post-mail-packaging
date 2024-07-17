@@ -5,5 +5,5 @@ import org.springframework.http.ResponseEntity;
 
 public interface ProducerMessageService {
 
-    ResponseEntity<?> sendMessage(MessageDto dto);
+    void sendMessage(MessageDto dto);
 }

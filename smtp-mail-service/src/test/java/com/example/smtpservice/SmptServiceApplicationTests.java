@@ -1,4 +1,4 @@
-package com.example.smpt_service;
+package com.example.smtpservice;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

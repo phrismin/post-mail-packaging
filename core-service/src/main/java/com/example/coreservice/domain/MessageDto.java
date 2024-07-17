@@ -4,14 +4,10 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import lombok.Data;
-import lombok.experimental.Accessors;
 
-import java.io.Serial;
-import java.io.Serializable;
 import java.util.Map;
 
 @Data
-@Accessors(chain = true)
 public class MessageDto {
 
     @NotNull

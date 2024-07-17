@@ -7,7 +7,6 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.amqp.core.MessageProperties;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -23,14 +22,11 @@ public class ProducerMessageServiceImpl implements ProducerMessageService {
     private final RabbitTemplate rabbitTemplate;
 
     @Override
-    public ResponseEntity<?> sendMessage(MessageDto dto) {
+    public void sendMessage(MessageDto dto) {
         MessageProperties messageProperties = new MessageProperties();
         messageProperties.setContentType(MessageProperties.CONTENT_TYPE_JSON);
         rabbitTemplate.getMessageConverter().toMessage(dto, messageProperties);
         rabbitTemplate.convertAndSend(exchangeName, routingKey, dto);
         log.info("Отправлено на обработку из answering-service:{}", dto);
-        return ResponseEntity
-                .ok()
-                .body(dto);
     }
 }

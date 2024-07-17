@@ -1,7 +1,8 @@
 package com.example.answeringservice.sevice;
 
+import com.example.answeringservice.domain.MessageAndMessageDetailDto;
 import org.springframework.http.ResponseEntity;
 
 public interface MessageService {
-    ResponseEntity<?> findAnswerByUniqueMessage(String uniqueMessage);
+    MessageAndMessageDetailDto findAnswerByUniqueMessage(String uniqueMessage);
 }

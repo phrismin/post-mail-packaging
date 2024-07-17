@@ -1,4 +1,4 @@
-package com.example.answeringservice;
+package com.example.answeringservice.util;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
