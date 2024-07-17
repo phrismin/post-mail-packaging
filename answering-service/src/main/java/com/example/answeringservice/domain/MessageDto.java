@@ -1,5 +1,6 @@
 package com.example.answeringservice.domain;
 
+import com.example.answeringservice.util.TypeFile;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
@@ -11,10 +12,7 @@ import java.io.Serializable;
 import java.util.Map;
 
 @Data
-@Accessors(chain = true)
 public class MessageDto {
-//    @Serial
-//    private static final long serialVersionUID = 1L;
 
     @NotNull
     @NotBlank
@@ -33,9 +31,9 @@ public class MessageDto {
     private String file;
 
     @NotNull
-    @NotBlank
     @JsonProperty("type_file")
-    private String typeFile;
+    //TODO сделать и down
+    private TypeFile typeFile;
 
     @NotNull
     private Map<String, String> data;

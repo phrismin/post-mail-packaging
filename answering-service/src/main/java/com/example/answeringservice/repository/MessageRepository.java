@@ -1,9 +1,9 @@
 package com.example.answeringservice.repository;
 
-import com.example.answeringservice.domain.MessageAndMessageDetailDto;
+import com.example.answeringservice.domain.MessageExtendDto;
 import org.apache.ibatis.annotations.*;
 
 @Mapper
 public interface MessageRepository {
-    MessageAndMessageDetailDto findAnswerByUniqueMessage(String uniqueMessage);
+    MessageExtendDto findAnswerByUniqueMessage(String uniqueMessage);
 }

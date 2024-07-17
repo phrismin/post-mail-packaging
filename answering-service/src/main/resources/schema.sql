@@ -1,4 +1,4 @@
-drop table  if exists messages cascade;
+drop table if exists messages cascade;
 drop table if exists group_users cascade;
 drop table if exists message_details cascade;
 drop table if exists templates cascade;

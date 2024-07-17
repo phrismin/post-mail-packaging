@@ -1,4 +1,4 @@
-package com.example.coreservice;
+package com.example.coreservice.util;
 
 import com.example.coreservice.domain.MessageDto;
 import com.fasterxml.jackson.databind.ObjectMapper;

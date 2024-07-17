@@ -1,9 +1,8 @@
 package com.example.answeringservice.sevice;
 
 import com.example.answeringservice.domain.MessageDto;
-import org.springframework.http.ResponseEntity;
 
-public interface ProducerMessageService {
+public interface RabbitProducerMessageService {
 
     void sendMessage(MessageDto dto);
 }

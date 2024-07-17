@@ -5,7 +5,7 @@ import lombok.Data;
 
 
 @Data
-public class MessageAndMessageDetailDto {
+public class MessageExtendDto {
 
     private MessageDto message;
 

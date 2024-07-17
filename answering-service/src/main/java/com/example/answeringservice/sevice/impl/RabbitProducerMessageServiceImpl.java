@@ -1,7 +1,7 @@
 package com.example.answeringservice.sevice.impl;
 
 import com.example.answeringservice.domain.MessageDto;
-import com.example.answeringservice.sevice.ProducerMessageService;
+import com.example.answeringservice.sevice.RabbitProducerMessageService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.amqp.core.MessageProperties;
@@ -12,7 +12,7 @@ import org.springframework.stereotype.Service;
 @Service
 @RequiredArgsConstructor
 @Slf4j
-public class ProducerMessageServiceImpl implements ProducerMessageService {
+public class RabbitProducerMessageServiceImpl implements RabbitProducerMessageService {
     @Value("${rabbitmq.exchange.name}")
     private String exchangeName;
 
