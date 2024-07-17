@@ -1,7 +1,7 @@
-drop table if exists messages;
-drop table if exists group_users;
-drop table if exists message_details;
-drop table if exists templates;
+drop table  if exists messages cascade;
+drop table if exists group_users cascade;
+drop table if exists message_details cascade;
+drop table if exists templates cascade;
 
 create table if not exists group_users
 (
