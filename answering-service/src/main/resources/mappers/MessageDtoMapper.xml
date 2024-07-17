@@ -4,7 +4,7 @@
 <mapper namespace="com.example.answeringservice.repository.MessageRepository">
 
     <select id="findAnswerByUniqueMessage" parameterType="string" resultMap="MessageAndMessageDetailDtoMap">
-        select m.group_users,
+        select m.group_users_id,
                m.template_id,
                m.unique_message,
                m.type_file,
