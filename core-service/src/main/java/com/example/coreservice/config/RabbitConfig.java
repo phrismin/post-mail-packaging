@@ -1,6 +1,9 @@
 package com.example.coreservice.config;
 
+import com.example.coreservice.CustomRabbitListenerErrorHandler;
+import com.example.coreservice.MessageDtoConverter;
 import com.example.coreservice.sevice.ConsumerMessageService;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.amqp.core.Binding;
 import org.springframework.amqp.core.BindingBuilder;
 import org.springframework.amqp.core.Queue;
@@ -44,17 +47,17 @@ public class RabbitConfig {
         return BindingBuilder.bind(queue).to(exchange).with(routingKey);
     }
 
-    @Bean
-    public Jackson2JsonMessageConverter messageConverter() {
-        return new Jackson2JsonMessageConverter();
-    }
+//    @Bean
+//    public Jackson2JsonMessageConverter messageConverter() {
+//        return new Jackson2JsonMessageConverter();
+//    }
 
-    @Bean
-    public RabbitTemplate rabbitTemplate(ConnectionFactory connectionFactory) {
-        RabbitTemplate rabbitTemplate = new RabbitTemplate(connectionFactory);
-        rabbitTemplate.setMessageConverter(messageConverter());
-        return rabbitTemplate;
-    }
+//    @Bean
+//    public RabbitTemplate rabbitTemplate(ConnectionFactory connectionFactory) {
+//        RabbitTemplate rabbitTemplate = new RabbitTemplate(connectionFactory);
+//        rabbitTemplate.setMessageConverter(messageConverter());
+//        return rabbitTemplate;
+//    }
 
     @Bean
     public SimpleMessageListenerContainer container(ConnectionFactory connectionFactory,
@@ -69,5 +72,23 @@ public class RabbitConfig {
     @Bean
     public MessageListenerAdapter listenerAdapter(ConsumerMessageService listener) {
         return new MessageListenerAdapter(listener, "consumeMessage");
+    }
+
+    @Bean
+    public RabbitTemplate rabbitTemplate(ConnectionFactory connectionFactory, MessageConverter customMessageConverter) {
+        RabbitTemplate template = new RabbitTemplate(connectionFactory);
+        template.setMessageConverter(customMessageConverter);
+        return template;
+    }
+
+    @Bean
+    public MessageConverter customMessageConverter() {
+        return new MessageDtoConverter(new ObjectMapper());
+    }
+
+
+    @Bean
+    public CustomRabbitListenerErrorHandler customRabbitListenerErrorHandler() {
+        return new CustomRabbitListenerErrorHandler();
     }
 }

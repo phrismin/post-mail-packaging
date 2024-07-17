@@ -12,9 +12,9 @@ import java.util.Map;
 
 @Data
 @Accessors(chain = true)
-public class MessageDto implements Serializable {
-    @Serial
-    private static final long serialVersionUID = 1L;
+public class MessageDto {
+//    @Serial
+//    private static final long serialVersionUID = 1L;
 
     @NotNull
     @NotBlank
