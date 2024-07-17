@@ -24,7 +24,7 @@ public class ProducerMessageServiceImpl implements ProducerMessageService {
     @Override
     public ResponseEntity<?> sendMessage(MessageDto dto) {
         rabbitTemplate.convertAndSend(exchangeName, routingKey, dto);
-        log.info("Отправлено на обработку из answering-service:" + dto.toString());
+        log.info("Отправлено на обработку из answering-service:{}", dto);
         return ResponseEntity
                 .ok()
                 .body(dto);

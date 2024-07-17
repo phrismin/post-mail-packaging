@@ -10,7 +10,7 @@ import org.springframework.stereotype.Service;
 @Slf4j
 public class ConsumerMessageImpl implements ConsumerMessageService {
     @Override
-    @RabbitListener(queues = "${rabbitmq.queue.name}")
+    @RabbitListener(queues = "message.process")
     public void consumeMessage(MessageDto messageDto) {
         log.info("Получено на обработку в core-service:" + messageDto.toString());
     }
