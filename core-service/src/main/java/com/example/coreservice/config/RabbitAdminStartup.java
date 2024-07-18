@@ -8,7 +8,7 @@ import org.springframework.context.ApplicationListener;
 import org.springframework.stereotype.Component;
 
 @Component
-public class ApplicationStartup implements ApplicationListener<ApplicationReadyEvent> {
+public class RabbitAdminStartup implements ApplicationListener<ApplicationReadyEvent> {
 
     @Autowired
     private AmqpAdmin rabbitAdmin;
