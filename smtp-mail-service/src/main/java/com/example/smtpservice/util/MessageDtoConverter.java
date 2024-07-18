@@ -1,6 +1,6 @@
 package com.example.smtpservice.util;
 
-import com.example.answeringservice.domain.MessageDto;
+import com.example.smtpservice.domain.MessageDto;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.amqp.core.Message;
 import org.springframework.amqp.core.MessageProperties;
