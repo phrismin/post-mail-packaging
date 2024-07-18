@@ -4,5 +4,5 @@ import com.example.answeringservice.domain.MessageDto;
 
 public interface RabbitProducerMessageService {
 
-    void sendMessage(MessageDto dto);
+    void sendMessageToCoreService(MessageDto dto);
 }

@@ -20,8 +20,8 @@ public class RabbitConsumerMessageImpl implements RabbitConsumerMessageService {
     @RabbitListener(queues = "message.process")
     public void processMessage(MessageDto messageDto) {
         log.info("Получено на обработку в core-service:{}", messageDto.toString());
-        String templateById = messageService.findTemplateById(messageDto.getTemplateId());
-        Integer groupUsers = messageDto.getGroupUsers();
+        String template = messageService.findTemplateById(messageDto.getTemplateId());
+//        Integer groupUsers = messageDto.getGroupUsers();
 
         sendMessageToSmtpService();
     }
@@ -31,5 +31,5 @@ public class RabbitConsumerMessageImpl implements RabbitConsumerMessageService {
     }
 
 
-    //updateStatus, dto лучше(uniqueMessage, status)
+    //updateStatus, dto (uniqueMessage, status)
 }

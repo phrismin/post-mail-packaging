@@ -20,8 +20,8 @@ public class MessageController {
 
     //TODO AdviceController
     @PostMapping("/send")
-    public ResponseEntity<?> sendMessage(@Valid @RequestBody MessageDto dto, BindingResult bindingResult) {
-        rabbitProducerMessageService.sendMessage(dto);
+    public ResponseEntity<?> sendMessage(@Valid @RequestBody MessageDto dto) {
+        rabbitProducerMessageService.sendMessageToCoreService(dto);
         return ResponseEntity.ok().build();
     }
 

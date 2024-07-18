@@ -17,7 +17,7 @@ public class RabbitConsumerMessageServiceImpl implements RabbitConsumerMessageSe
 
     @Override
     @RabbitListener(queues = "mail.send")
-    public void processMessage(MessageDto messageDto) {
+    public void processMessage(String messageDto) {
         log.info("Получено на обработку в smtp-mail-service:{}", messageDto.toString());
 
         try {

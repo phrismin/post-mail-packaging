@@ -22,7 +22,7 @@ public class RabbitProducerMessageServiceImpl implements RabbitProducerMessageSe
     private final RabbitTemplate rabbitTemplate;
 
     @Override
-    public void sendMessage(MessageDto dto) {
+    public void sendMessageToCoreService(MessageDto dto) {
         MessageProperties messageProperties = new MessageProperties();
         messageProperties.setContentType(MessageProperties.CONTENT_TYPE_JSON);
         rabbitTemplate.getMessageConverter().toMessage(dto, messageProperties);

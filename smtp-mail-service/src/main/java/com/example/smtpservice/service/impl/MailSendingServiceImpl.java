@@ -4,20 +4,15 @@ import jakarta.mail.Message;
 import jakarta.mail.MessagingException;
 import jakarta.mail.Session;
 import jakarta.mail.Transport;
-import jakarta.mail.internet.AddressException;
 import jakarta.mail.internet.InternetAddress;
 import jakarta.mail.internet.MimeMessage;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
 import com.example.smtpservice.service.MailSendingService;
-import org.springframework.mail.SimpleMailMessage;
-import org.springframework.mail.javamail.JavaMailSender;
-import org.springframework.mail.javamail.JavaMailSenderImpl;
 import org.springframework.stereotype.Service;
 
 import java.io.UnsupportedEncodingException;
-import java.util.Properties;
 
 @Service
 @Slf4j
@@ -49,12 +44,12 @@ public class MailSendingServiceImpl implements MailSendingService {
             transport.sendMessage(msg, msg.getAllRecipients());
 
             log.info("Successfully sent email to {}", to);
-            //TODO add queues
+            //TODO добавить в очередь статус ок
 //            publisher.send("success");
         } catch (Exception ex) {
             log.error("Email to {} was not sent", to);
             log.error("Error message: {}", ex.getMessage());
-            //TODO add queues
+            //TODO добавить в очередь статус не доставлено
 //            publisher.send("notSuccess");
         }
     }
